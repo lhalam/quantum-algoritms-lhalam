@@ -199,10 +199,21 @@ if __name__ == "__main__":
     # Отримуємо вихід схеми на основі вхідного рядка (за замовчуванням '11');
     # допустимі входи: '00', '11' (стала) або '01', '10' (збалансована). Дивіться
     # коментарі вище для більш детальної інформації.
-    output = circuit('11')
+    for data in ['00', '11']: # ToDo not working for '01', '10' ?
+        print(f"Вхідні дані: {data}")
+        output = circuit(data)
 
-    # Інтерпретуємо та виводимо результати виконання схеми
-    results(output['input_string'], output['result'])
+        # Інтерпретуємо та виводимо результати виконання схеми
+        results(output['input_string'], output['result'])
 
-    # Візуалізуємо результати
-    visualize_results(output['result'])
+        # Візуалізуємо результати
+        visualize_results(output['result'])
+
+    # old code:
+    # output = circuit('11')
+    #
+    # # Інтерпретуємо та виводимо результати виконання схеми
+    # results(output['input_string'], output['result'])
+    #
+    # # Візуалізуємо результати
+    # visualize_results(output['result'])
